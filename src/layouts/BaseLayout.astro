@@ -1,0 +1,60 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Clock from '../components/Clock';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'A personal portfolio' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.url.origin).href} />
+    <ViewTransitions />
+  </head>
+  <body>
+    <header class="fixed left-0 top-0 w-full z-10 bg-[hsl(var(--background))] duration-300">
+      <div class="md:mx-28 mx-6 my-0 py-6">
+        <h1 class="fixed left-7 top-6">
+          <a href="/">K / S</a>
+        </h1>
+        <nav class="flex items-center justify-end md:justify-between">
+          <ul class="flex gap-5 list-none m-0 p-0">
+            <li class="underline-offset-4 hover:underline">
+              <a href="/about">About</a>
+            </li>
+            <li class="underline-offset-4 hover:underline">
+              <a href="/">Projects</a>
+            </li>
+            <li class="underline-offset-4 hover:underline">
+              <a href="#" target="_blank" rel="noopener">CV</a>
+            </li>
+          </ul>
+          <div class="hidden md:inline ml-4" id="clock-wrapper">
+            <Clock client:only="react" />
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="hidden md:block fixed float-left right-0 top-0 w-0">
+      <span class="fixed -rotate-90 bottom-6 right-8 text-xs whitespace-nowrap origin-bottom-right">( c ) 2015 - 2025</span>
+    </div>
+
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

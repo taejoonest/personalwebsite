@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ProjectsSection from '../components/ProjectsSection';
+import { getProjectsByYear } from '../data/projects';
+
+const projectsByYear = [...getProjectsByYear().entries()];
+---
+<BaseLayout title="Portfolio" description="A personal portfolio.">
+  <section class="md:mx-28 mx-6 my-0 py-6 pt-[72px] relative">
+    <div class="w-full pt-3">
+      <ProjectsSection client:only="react" projectsByYear={projectsByYear} />
+    </div>
+  </section>
+</BaseLayout>
