@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Graphics Projects | Portfolio" description="Three graphics projects with video, gallery, and standout reference.">
+  <section class="md:mx-28 mx-6 my-0 py-6 pt-[72px] max-w-4xl">
+    <h1 class="text-3xl font-semibold text-[hsl(var(--foreground))] mb-4">Graphics Projects</h1>
+    <p class="text-[hsl(var(--foreground))] leading-relaxed mb-8">
+      Three featured graphics works: a video submission, a four-image gallery, and a Cornell CS4620 standout reference.
+    </p>
+
+    <div class="space-y-10">
+      <section class="border-b border-[hsl(var(--foreground))]/10 pb-8">
+        <h2 class="text-xl font-medium mb-3">Project 1 - Video Submission</h2>
+        <video class="w-full rounded border border-[hsl(var(--foreground))]/10" controls preload="metadata">
+          <source src="/videos/graphics-project-1.mp4" type="video/mp4" />
+          Your browser does not support embedded videos.
+        </video>
+      </section>
+
+      <section class="border-b border-[hsl(var(--foreground))]/10 pb-8">
+        <h2 class="text-xl font-medium mb-3">Project 2 - Image Gallery</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <img src="/images/graphics/project2-1.png" alt="Graphics project 2 image 1" class="w-full rounded border border-[hsl(var(--foreground))]/10" loading="lazy" />
+          <img src="/images/graphics/project2-2.png" alt="Graphics project 2 image 2" class="w-full rounded border border-[hsl(var(--foreground))]/10" loading="lazy" />
+          <img src="/images/graphics/project2-3.png" alt="Graphics project 2 image 3" class="w-full rounded border border-[hsl(var(--foreground))]/10" loading="lazy" />
+          <img src="/images/graphics/project2-4.png" alt="Graphics project 2 image 4" class="w-full rounded border border-[hsl(var(--foreground))]/10" loading="lazy" />
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-medium mb-3">Project 3 - Cornell CS4620 Standout</h2>
+        <p class="text-[hsl(var(--foreground))] leading-relaxed">
+          Featured on the CS4620 final project standouts page with Chris Um:
+          <a
+            class="underline underline-offset-4 hover:no-underline ml-1"
+            href="https://www.cs.cornell.edu/courses/cs4620/2025fa/assignments/docs/assignments/FinalProject/standouts"
+            target="_blank"
+            rel="noopener"
+          >
+            View standout listing
+          </a>
+        </p>
+      </section>
+    </div>
+  </section>
+</BaseLayout>
