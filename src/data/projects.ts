@@ -6,14 +6,84 @@ export interface Project {
   image: string;
   imageWidth?: number;
   imageHeight?: number;
+  outcome?: string;
+  role?: string;
+  stack?: string[];
+  liveUrl?: string;
+  githubUrl?: string;
 }
 
 export const projects: Project[] = [
-  { id: '1', title: 'Project One', year: 2024, slug: '/projects/one', image: 'https://picsum.photos/620/930', imageWidth: 620, imageHeight: 930 },
-  { id: '2', title: 'Project Two', year: 2024, slug: '/projects/two', image: 'https://picsum.photos/1920/1080', imageWidth: 1920, imageHeight: 1080 },
-  { id: '3', title: 'Project Three', year: 2023, slug: '/projects/three', image: 'https://picsum.photos/1000/551', imageWidth: 1000, imageHeight: 551 },
-  { id: '4', title: 'Project Four', year: 2023, slug: '/projects/four', image: 'https://picsum.photos/1031/693', imageWidth: 1031, imageHeight: 693 },
-  { id: '5', title: 'Project Five', year: 2022, slug: '/projects/five', image: 'https://picsum.photos/1024/576', imageWidth: 1024, imageHeight: 576 },
+  {
+    id: '1',
+    title: 'FlexPool Journeyman',
+    year: 2024,
+    slug: '/projects/flexpool-journeyman',
+    image: 'https://picsum.photos/620/930',
+    imageWidth: 620,
+    imageHeight: 930,
+    outcome: 'Built a cleaner project discovery flow with faster navigation.',
+    role: 'Product Designer + Frontend Developer',
+    stack: ['Astro', 'React', 'Tailwind'],
+    liveUrl: '#',
+    githubUrl: '#',
+  },
+  {
+    id: '2',
+    title: 'SunBuddy',
+    year: 2024,
+    slug: '/projects/sunbuddy',
+    image: 'https://picsum.photos/1920/1080',
+    imageWidth: 1920,
+    imageHeight: 1080,
+    outcome: 'Created a reusable component library to speed up delivery.',
+    role: 'Frontend Developer',
+    stack: ['TypeScript', 'React', 'Storybook'],
+    liveUrl: '#',
+    githubUrl: '#',
+  },
+  {
+    id: '3',
+    title: 'NASA PRAG',
+    year: 2023,
+    slug: '/projects/nasa-prag',
+    image: 'https://picsum.photos/1000/551',
+    imageWidth: 1000,
+    imageHeight: 551,
+    outcome: 'Improved page performance and reduced bounce on mobile.',
+    role: 'Frontend Performance Engineer',
+    stack: ['Astro', 'Vite', 'Lighthouse'],
+    liveUrl: '#',
+    githubUrl: '#',
+  },
+  {
+    id: '4',
+    title: 'WaterXChange',
+    year: 2023,
+    slug: '/projects/waterxchange',
+    image: 'https://picsum.photos/1031/693',
+    imageWidth: 1031,
+    imageHeight: 693,
+    outcome: 'Designed and shipped an accessible interface for key flows.',
+    role: 'UX Engineer',
+    stack: ['HTML', 'CSS', 'TypeScript'],
+    liveUrl: '#',
+    githubUrl: '#',
+  },
+  {
+    id: '5',
+    title: 'Graphics Projects',
+    year: 2022,
+    slug: '/projects/graphics-projects',
+    image: 'https://picsum.photos/1024/576',
+    imageWidth: 1024,
+    imageHeight: 576,
+    outcome: 'Built an internal dashboard to simplify reporting tasks.',
+    role: 'Full Stack Developer',
+    stack: ['React', 'Node.js', 'PostgreSQL'],
+    liveUrl: '#',
+    githubUrl: '#',
+  },
 ];
 
 export function getProjectsByYear(): Map<number, Project[]> {

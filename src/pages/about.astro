@@ -2,10 +2,31 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 <BaseLayout title="About | Portfolio" description="About me.">
-  <section class="md:mx-28 mx-6 my-0 py-6 pt-[72px] max-w-2xl">
-    <p class="text-[hsl(var(--foreground))] leading-relaxed">
-      A short bio or about text goes here. You can edit this in
-      <code class="text-sm bg-black/5 dark:bg-white/10 px-1 rounded">src/pages/about.astro</code>.
+  <section class="md:mx-28 mx-6 my-0 py-6 pt-[72px] max-w-3xl">
+    <h1 class="text-3xl font-semibold text-[hsl(var(--foreground))] mb-5">About Me</h1>
+    <p class="text-[hsl(var(--foreground))] leading-relaxed mb-8">
+      Hi, I am [Your Name]. I build thoughtful digital experiences and enjoy creating work that is both useful and visually clean.
+      This page introduces who I am, the projects I am working on, and what I am interested in.
     </p>
+
+    <h2 class="text-xl font-semibold text-[hsl(var(--foreground))] mb-3">Projects</h2>
+    <p class="text-[hsl(var(--foreground))] leading-relaxed mb-3">
+      A few projects I am currently focusing on:
+    </p>
+    <ul class="list-disc pl-6 text-[hsl(var(--foreground))] leading-relaxed mb-8 space-y-1">
+      <li>Personal Website Redesign</li>
+      <li>Interactive Portfolio Case Studies</li>
+      <li>Design System and Component Library</li>
+    </ul>
+
+    <h2 class="text-xl font-semibold text-[hsl(var(--foreground))] mb-3">Interests</h2>
+    <p class="text-[hsl(var(--foreground))] leading-relaxed mb-3">
+      Outside of project work, I am especially interested in:
+    </p>
+    <ul class="list-disc pl-6 text-[hsl(var(--foreground))] leading-relaxed space-y-1">
+      <li>Frontend performance and accessibility</li>
+      <li>Motion and interaction design</li>
+      <li>Photography and visual storytelling</li>
+    </ul>
   </section>
 </BaseLayout>

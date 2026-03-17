@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getProjectsByYear } from '../data/projects';
+
+const projectsByYear = [...getProjectsByYear().entries()];
+---
+<BaseLayout title="Projects | Portfolio" description="Project list and case studies.">
+  <section class="md:mx-28 mx-6 my-0 py-6 pt-[72px] max-w-3xl">
+    <h1 class="text-3xl font-semibold text-[hsl(var(--foreground))] mb-4">Projects</h1>
+    <p class="text-[hsl(var(--foreground))] leading-relaxed mb-8">
+      A selected list of projects with context on outcomes, role, and implementation details.
+    </p>
+
+    {
+      projectsByYear.map(([year, projects]) => (
+        <div class="mb-10">
+          <h2 class="text-sm uppercase tracking-wide text-[hsl(var(--foreground))]/60 mb-3">{year}</h2>
+          <div class="space-y-7">
+            {projects.map((project) => (
+              <article class="border-b border-[hsl(var(--foreground))]/10 pb-6">
+                <h3 class="text-xl font-medium text-[hsl(var(--foreground))] mb-2">{project.title}</h3>
+                <p class="text-[hsl(var(--foreground))] leading-relaxed mb-3">
+                  {project.outcome ?? 'Project outcome summary coming soon.'}
+                </p>
+                <p class="text-[hsl(var(--foreground))] leading-relaxed mb-1">
+                  <strong>Role:</strong> {project.role ?? 'Role details coming soon.'}
+                </p>
+                <p class="text-[hsl(var(--foreground))] leading-relaxed mb-3">
+                  <strong>Stack:</strong> {project.stack?.join(', ') ?? 'Stack details coming soon.'}
+                </p>
+                <div class="flex gap-4 text-sm">
+                  <a class="underline underline-offset-4 hover:no-underline" href={project.slug}>View case study</a>
+                  <a class="underline underline-offset-4 hover:no-underline" href={project.liveUrl ?? '#'} target="_blank" rel="noopener">
+                    Live demo
+                  </a>
+                  <a class="underline underline-offset-4 hover:no-underline" href={project.githubUrl ?? '#'} target="_blank" rel="noopener">
+                    GitHub
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </section>
+</BaseLayout>
