@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-const TZ = 'Asia/Tokyo';
-const PREFIX = 'TYO';
+const TZ = 'America/Los_Angeles';
+const PREFIX = 'CALIFORNIA';
 
 export default function Clock() {
   const [time, setTime] = useState<string>('');
@@ -19,7 +19,13 @@ export default function Clock() {
         second: '2-digit',
         hour12: false,
       }).replace(',', '').replace(/\//g, '-');
-      setTime(`${PREFIX} - ${s} GMT+9`);
+      const offsetPart = new Intl.DateTimeFormat('en-US', {
+        timeZone: TZ,
+        timeZoneName: 'short',
+      })
+        .formatToParts(now)
+        .find((part) => part.type === 'timeZoneName')?.value;
+      setTime(`${PREFIX} - ${s} ${offsetPart ?? ''}`.trim());
     };
     format();
     const id = setInterval(format, 1000);
