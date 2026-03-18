@@ -11,6 +11,10 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <div class="space-y-10">
       <section class="border-b border-[hsl(var(--foreground))]/10 pb-8">
         <h2 class="text-xl font-medium mb-3">Project 1 - Video Submission</h2>
+        <p class="text-[hsl(var(--foreground))] leading-relaxed mb-3">
+          Using AniGraph to create a 2D game. Used key concepts I have learned in first half of semester in CS 4620 such as
+          Perlin noise and scene graphs.
+        </p>
         <video class="w-full rounded border border-[hsl(var(--foreground))]/10" controls preload="metadata">
           <source src="/videos/graphics-project-1.mp4" type="video/mp4" />
           Your browser does not support embedded videos.
@@ -19,6 +23,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
       <section class="border-b border-[hsl(var(--foreground))]/10 pb-8">
         <h2 class="text-xl font-medium mb-3">Project 2 - Image Gallery</h2>
+        <p class="text-[hsl(var(--foreground))] leading-relaxed mb-3">
+          Using ray tracing in Python to use constructive solid geometry.
+        </p>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <img src="/images/graphics/project2-1.png" alt="Graphics project 2 image 1" class="w-full rounded border border-[hsl(var(--foreground))]/10" loading="lazy" />
           <img src="/images/graphics/project2-2.png" alt="Graphics project 2 image 2" class="w-full rounded border border-[hsl(var(--foreground))]/10" loading="lazy" />

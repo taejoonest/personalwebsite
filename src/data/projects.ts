@@ -7,6 +7,7 @@ export interface Project {
   imageWidth?: number;
   imageHeight?: number;
   outcome?: string;
+  description?: string;
   role?: string;
   stack?: string[];
   liveUrl?: string;
@@ -23,6 +24,8 @@ export const projects: Project[] = [
     imageWidth: 620,
     imageHeight: 930,
     outcome: 'Built a projection-based AR guidance system for hands-on skill learning in real environments.',
+    description:
+      'Using ENTTEC OPEN DMX USB to control laser projection using C++. For our demo, we use YOLOv8-based image segmentation to project laser to keys on a piano.',
     role: 'Product Designer + Frontend Developer',
     stack: ['Astro', 'React', 'Tailwind'],
     liveUrl: 'https://devpost.com/software/journeyman-augmenting-personal-realities',
@@ -37,6 +40,7 @@ export const projects: Project[] = [
     imageWidth: 1920,
     imageHeight: 1080,
     outcome: 'Built a wearable UV monitoring system with real-time alerts and companion app support.',
+    description: 'Built a wearable UV monitoring system with real-time alerts and companion app support.',
     role: 'Frontend Developer',
     stack: ['TypeScript', 'React', 'Storybook'],
     liveUrl: 'https://devpost.com/software/sun-buddy',
@@ -51,6 +55,8 @@ export const projects: Project[] = [
     imageWidth: 1000,
     imageHeight: 551,
     outcome: 'Improved page performance and reduced bounce on mobile.',
+    description:
+      'Inverse model to retrieve surface refractive index of the ocean to detect oil spills near 6 key geographical sites NASA decided on for its PACE (Plankton, Aerosol, Cloud, and ocean Ecosystem) mission launched in 2024.',
     role: 'Frontend Performance Engineer',
     stack: ['Astro', 'Vite', 'Lighthouse'],
     liveUrl: 'https://2024.oceanopticsconference.org/abstract-ottaviani/',

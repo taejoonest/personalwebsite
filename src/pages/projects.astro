@@ -6,7 +6,7 @@ import { projects } from '../data/projects';
   <section class="md:mx-28 mx-6 my-0 py-6 pt-[72px] max-w-3xl">
     <h1 class="text-3xl font-semibold text-[hsl(var(--foreground))] mb-4">Projects</h1>
     <p class="text-[hsl(var(--foreground))] leading-relaxed mb-8">
-      A selected list of projects with context on outcomes, role, and implementation details.
+      A selected list of projects with context on outcomes, descriptions, and implementation details.
     </p>
 
     <div class="space-y-7">
@@ -18,7 +18,7 @@ import { projects } from '../data/projects';
               {project.outcome ?? 'Project outcome summary coming soon.'}
             </p>
             <p class="text-[hsl(var(--foreground))] leading-relaxed mb-1">
-              <strong>Role:</strong> {project.role ?? 'Role details coming soon.'}
+              <strong>Description:</strong> {project.description ?? 'Description coming soon.'}
             </p>
             <div class="flex gap-4 text-sm mt-3">
               <a class="underline underline-offset-4 hover:no-underline" href={project.liveUrl ?? project.slug} target="_blank" rel="noopener">
@@ -32,8 +32,8 @@ import { projects } from '../data/projects';
                   <section>
                     <h3 class="text-lg font-medium mb-2">Project 1 - Video Submission</h3>
                     <p class="text-[hsl(var(--foreground))] leading-relaxed mb-2">
-                      Add your video to <code class="text-sm bg-black/5 dark:bg-white/10 px-1 rounded">public/videos/graphics-project-1.mp4</code>
-                      and it will render here.
+                      Using AniGraph to create a 2D game. Used key concepts I have learned in first half of semester in CS 4620
+                      such as Perlin noise and scene graphs.
                     </p>
                     <video class="w-full rounded border border-[hsl(var(--foreground))]/10" controls preload="metadata">
                       <source src="/videos/graphics-project-1.mp4" type="video/mp4" />
@@ -44,12 +44,7 @@ import { projects } from '../data/projects';
                   <section>
                     <h3 class="text-lg font-medium mb-2">Project 2 - Image Gallery</h3>
                     <p class="text-[hsl(var(--foreground))] leading-relaxed mb-3">
-                      Place your four images in <code class="text-sm bg-black/5 dark:bg-white/10 px-1 rounded">public/images/graphics/</code> using
-                      these filenames:
-                      <code class="text-sm bg-black/5 dark:bg-white/10 px-1 rounded ml-1">project2-1.png</code>,
-                      <code class="text-sm bg-black/5 dark:bg-white/10 px-1 rounded ml-1">project2-2.png</code>,
-                      <code class="text-sm bg-black/5 dark:bg-white/10 px-1 rounded ml-1">project2-3.png</code>,
-                      <code class="text-sm bg-black/5 dark:bg-white/10 px-1 rounded ml-1">project2-4.png</code>.
+                      Using ray tracing in Python to use constructive solid geometry.
                     </p>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <img src="/images/graphics/project2-1.png" alt="Graphics project 2 image 1" class="w-full rounded border border-[hsl(var(--foreground))]/10" loading="lazy" />
